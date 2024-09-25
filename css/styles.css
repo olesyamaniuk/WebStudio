@@ -1,4 +1,7 @@
 /* ============== COMMON STYLES ============== */
+html {
+  scroll-behavior: smooth;
+}
 h1,
 h2,
 h3,
@@ -14,15 +17,13 @@ ol {
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 0;
+  list-style-type: none;
 }
 img {
   display: block;
 }
-.link {
+a {
   text-decoration: none;
-}
-.list {
-  list-style-type: none;
 }
 button {
   cursor: pointer;
@@ -40,6 +41,7 @@ button {
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
+
 body {
   font-family: "Roboto", sans-serif;
   background-color: #ffffff;
@@ -48,6 +50,10 @@ body {
 .section {
   padding-top: 96px;
   padding-bottom: 96px;
+
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
 }
 .container {
   padding-left: 15px;
@@ -59,16 +65,18 @@ body {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .page-navigation {
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
-
 .menu {
   display: none;
 }
-
 .contacts-list {
   display: none;
 }
@@ -81,12 +89,9 @@ body {
   font-family: "Raleway", sans-serif;
   font-weight: 700;
   display: block;
-  margin-bottom: 16px;
   text-align: center;
-  /* padding-bottom: 17.5px; */
-  /* padding-top: 17.5px; */
-  /* margin-top: 17;
-  margin-bottom: 17; */
+  margin-bottom: 16px;
+  margin-top: 16px;
 }
 .logo-black {
   color: #2e2f42;
@@ -98,14 +103,12 @@ body {
   width: 24px;
   height: 24px;
 }
-
 .mobile-open-btn {
   border: none;
   background-color: transparent;
   padding: 0;
   line-height: 0;
 }
-
 .header-container {
   display: flex;
   align-items: center;
@@ -115,7 +118,6 @@ body {
 
 /* ============== HERO STYLES ============== */
 .hero {
-  text-align: center;
   margin: 0 auto;
   padding: 72px 0;
   width: 100%;
@@ -128,6 +130,9 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .hero-title {
   color: #fff;
@@ -164,6 +169,11 @@ body {
 /* ============== /HERO STYLES ============== */
 
 /* ============== BENEFITS ============== */
+.benefits {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .benefits-list {
   display: flex;
   flex-direction: column;
@@ -201,6 +211,9 @@ body {
 /* ============== TEAM ============== */
 .our-team {
   background-color: #f4f4fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section-title {
   color: #2e2f42;
@@ -267,7 +280,7 @@ body {
 }
 .social-list-link:hover,
 .social-list-link:focus {
-  background-color: #404bbf;
+  background-color: #31d0aa;
 }
 .social-list-icon {
   fill: #f4f4fd;
@@ -277,6 +290,9 @@ body {
 /* ============== PORTFOLIO ============== */
 .portfolio {
   background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .portfolio-list {
   display: flex;
@@ -357,6 +373,9 @@ body {
 /* ============== FOOTER STYLES ============== */
 .page-footer {
   background-color: #2e2f42;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .footer-container {
   width: 320px;
@@ -776,9 +795,9 @@ body {
     position: absolute;
     display: flex;
     left: 0;
-    bottom: -1px;
+    bottom: 16px;
     content: "";
-    width: 48px;
+    width: 50px;
     height: 4px;
     border-radius: 2px;
     background: #404bbf;
@@ -806,7 +825,9 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
   .header-contacts-link {
     font-size: 16px;
@@ -880,6 +901,7 @@ body {
   /* ============== FOOTER STYLES ============== */
   .footer-logo {
     margin-bottom: 0;
+    margin-right: 50px;
   }
   .footer-container {
     width: 584px;
@@ -900,6 +922,7 @@ body {
     text-align: start;
   }
   .footer-social-media-text {
+    margin-top: 14px;
     text-align: start;
   }
   .footer-social-list {
@@ -908,6 +931,7 @@ body {
 
   .form-footer-subscribe {
     justify-content: start;
+    margin-top: 14px;
   }
   .review-form-field-footer {
     width: 264px;
@@ -1031,7 +1055,7 @@ body {
     column-gap: 0;
   }
   .footer-logo {
-    margin-right: 120px;
+    margin-right: 100px;
   }
   .form-footer {
     margin-left: 80px;
@@ -1153,7 +1177,6 @@ body {
 
 .review-form-input-wrapper {
   position: relative;
-  /* margin-bottom: 16px; */
 }
 .review-form-field-wrapper-comment {
   margin-bottom: 16px;
@@ -1185,12 +1208,9 @@ body {
   top: 50%;
   left: 16px;
   transform: translateY(-50%);
-
-  /* fill: #2e2f42; */
   stroke: none;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 .review-form-message {
   width: 100%;
   height: 120px;
