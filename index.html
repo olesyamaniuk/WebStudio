@@ -26,13 +26,13 @@
           >
           <ul class="menu">
             <li class="menu-item">
-              <a class="menu-link menu-studio" href="./index.html">Studio</a>
+              <a href="#hero" class="menu-link">Studio</a>
             </li>
             <li class="menu-item">
-              <a href="#portfolio" class="menu-link" href="">Portfolio</a>
+              <a href="#portfolio" class="menu-link">Portfolio</a>
             </li>
             <li class="menu-item">
-              <a href="#footer" class="menu-link" href="">Contacts</a>
+              <a href="#footer" class="menu-link">Contacts</a>
             </li>
           </ul>
         </nav>
@@ -75,7 +75,7 @@
             <li class="menu-item-mobile">
               <a
                 class="menu-navigation-studio-mobile-navig menu-addres-list-link-mobile-navig"
-                href="#header"
+                href="#hero"
                 >Studio</a
               >
             </li>
@@ -747,7 +747,6 @@
         <p class="review-form-description">
           Leave your contacts and we will call you back
         </p>
-
         <form class="review-form">
           <div class="review-form-field-wrapper">
             <label class="review-form-field-label" for="user-name">
@@ -903,6 +902,39 @@
         if (event.target === backdrop) {
           backdrop.classList.remove("is-open");
         }
+      });
+      // //
+      document.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const footer = document.querySelector("footer");
+        const navLinks = document.querySelectorAll(".menu-link");
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (
+            pageYOffset >= sectionTop - sectionHeight / 3 &&
+            pageYOffset < sectionTop + sectionHeight - sectionHeight / 3
+          ) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        const footerTop = footer.offsetTop;
+        const scrollPosition = window.innerHeight + window.pageYOffset;
+
+        if (scrollPosition >= footerTop) {
+          currentSection = "footer";
+        }
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+          }
+        });
       });
     </script>
   </body>

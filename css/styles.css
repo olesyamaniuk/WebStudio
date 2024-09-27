@@ -61,6 +61,12 @@ body {
 /* ============== /COMMON STYLES ============== */
 /* ============== HEADER STYLES ============== */
 .page-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+  background-color: white; 
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -184,8 +190,6 @@ body {
   font-weight: 700;
   line-height: 1.11;
   letter-spacing: 0.02em;
-  /* margin-left: auto; */
-  /* margin-right: auto; */
   text-transform: capitalize;
   text-align: center;
   margin-bottom: 8px;
@@ -783,9 +787,6 @@ textarea.review-form-message {
   letter-spacing: 0.02em;
   text-transform: capitalize;
 }
-.menu-navigation-studio-mobile-navig {
-  color: #404bbf;
-}
 .menu-navigation-studio-mobile-navig:active {
   text-decoration: underline;
 }
@@ -843,7 +844,8 @@ textarea.review-form-message {
   color: #404bbf;
 }
 .menu-addres-list-link-mobile-navig:hover,
-.menu-addres-list-link-mobile-navig:focus {
+.menu-addres-list-link-mobile-navig:focus,
+.menu-addres-list-link-mobile-navig:active {
   color: #404bbf;
 }
 .social-list-link-mobile:hover,
@@ -887,7 +889,6 @@ textarea.review-form-message {
     display: flex;
     gap: 40px;
   }
-
   .menu-item {
     display: flex;
     color: #2e2f42;
@@ -901,33 +902,28 @@ textarea.review-form-message {
     padding: 24px 0;
     color: var(--NAVY-BLUE, #2e2f42);
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .menu-link:hover,
-  .menu-link:focus {
-    color: #404bbf;
-  }
-  .menu-studio {
     position: relative;
-    color: #404bbf;
   }
-  .menu-studio:active {
-    text-decoration: underline;
-  }
-  .menu-studio:hover,
-  .menu-studio:focus {
-    color: #404bbf;
-  }
-  .menu-studio::after {
+  .menu-link::after {
     position: absolute;
-    display: flex;
+    display: block;
     left: 0;
     bottom: 16px;
     content: "";
-    width: 50px;
+    width: 0;
     height: 4px;
     border-radius: 2px;
     background: #404bbf;
+    transition: width 0.3s ease;
   }
+  .menu-link.active::after {
+    width: 100%;
+  }
+
+  .menu-link.active {
+    color: #404bbf;
+  }
+
   .logo-link {
     margin-right: 120px;
   }
