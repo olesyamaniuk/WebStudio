@@ -48,15 +48,12 @@ body {
   color: #434455;
 }
 .section {
-  padding-top: 96px;
-  padding-bottom: 96px;
-  display: flex;
-  align-items: center;
+  padding: 96px 0;
 }
 .container {
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 0 16px;
   width: 320px;
+  margin: 0 auto;
 }
 /* ============== /COMMON STYLES ============== */
 /* ============== HEADER STYLES ============== */
@@ -65,13 +62,14 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000; 
-  background-color: white; 
+  z-index: 1000;
+  background-color: white;
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
   display: flex;
   align-items: center;
+
   justify-content: center;
 }
 .page-navigation {
@@ -117,13 +115,15 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  height: 56px;
   justify-content: space-between;
 }
 /* ============== /HEADER STYLES ============== */
 /* ============== HERO STYLES ============== */
 .hero {
-  margin: 0 auto;
-  padding: 72px 0;
+  margin: 56px auto 0;
+}
+.hero-container {
   width: 100%;
   height: 432px;
   background-image: linear-gradient(
@@ -134,20 +134,18 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
+  gap: 72px;
+  padding: 72px 52px;
 }
 .hero-title {
+  width: 216px;
   color: #fff;
   font-size: 36px;
   line-height: 1.11;
+  text-align: center;
   letter-spacing: 0.02em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 220px;
-  height: 160px;
-  margin-bottom: 72px;
 }
 .hero-button {
   font-size: 16px;
@@ -159,7 +157,7 @@ body {
   color: #ffffff;
   padding: 16px 32px;
   display: block;
-  margin: 0 auto;
+
   min-width: 169px;
   border-radius: 4px;
   border: none;
@@ -171,18 +169,11 @@ body {
 }
 /* ============== /HERO STYLES ============== */
 /* ============== BENEFITS ============== */
-.benefits {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .benefits-list {
   display: flex;
   flex-direction: column;
-  row-gap: 72px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+  gap: 72px;
 }
 .benefits-title {
   color: #2e2f42;
@@ -195,7 +186,6 @@ body {
   margin-bottom: 8px;
 }
 .benefits-desc {
-  width: 100%;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -209,9 +199,6 @@ body {
 /* ============== TEAM ============== */
 .our-team {
   background-color: #f4f4fd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .section-title {
   color: #2e2f42;
@@ -227,10 +214,10 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
   row-gap: 72px;
-  padding: 0;
-  box-sizing: content-box;
 }
+
 .team-list-item {
   background-color: #ffffff;
   width: 264px;
@@ -240,7 +227,7 @@ body {
     0px 1px 6px 0px rgba(46, 47, 66, 0.08);
 }
 .team-block {
-  padding: 32px 0;
+  padding: 32px 16px;
 }
 .team-name {
   text-align: center;
@@ -266,36 +253,31 @@ body {
   gap: 24px;
 }
 .social-list-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   line-height: 0;
   background-color: #4d5ae5;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: #31d0aa;
+  transform: scale(1.1);
 }
 .social-list-icon {
   fill: #f4f4fd;
 }
 /* ============== /TEAM ============== */
 /* ============== PORTFOLIO ============== */
-.portfolio {
-  background: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .portfolio-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 24px;
+  gap: 48px;
   row-gap: 48px;
 }
 .portfolio-list-item {
@@ -347,7 +329,7 @@ body {
   overflow: auto;
   height: 100%;
   transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-list-item:hover .overlay-text,
 .portfolio-list-item:focus .overlay-text {
@@ -360,12 +342,11 @@ body {
 /* ============== FOOTER STYLES ============== */
 .page-footer {
   background-color: #2e2f42;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 .footer-container {
-  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
 }
 .footer-text {
   color: #f4f4fd;
@@ -376,14 +357,8 @@ body {
 }
 .logo-footer {
   color: #f4f4fd;
-  margin-bottom: 72px;
 }
-.footer-logo {
-  margin-bottom: 72px;
-}
-.footer-social-media {
-  margin-bottom: 72px;
-}
+
 .footer-social-media-text {
   color: #fff;
   font-size: 16px;
@@ -396,8 +371,6 @@ body {
 .footer-social-list {
   display: flex;
   gap: 16px;
-  margin-left: auto;
-  margin-right: auto;
   justify-content: center;
   align-items: center;
 }
@@ -406,9 +379,8 @@ body {
   height: 40px;
 }
 .footer-social-list-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   line-height: 0;
   background-color: #4d5ae5;
   width: 100%;
@@ -861,7 +833,7 @@ textarea.review-form-message {
   @media screen and (min-resolution: 192dpi) and (max-width: 1157px),
     screen and (min-resolution: 2dppx) and (max-width: 1157px),
     screen and (min-device-pixel-ratio: 2) and (max-width: 1157px) {
-    .hero {
+    .hero-container {
       background-image: linear-gradient(
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
@@ -879,10 +851,9 @@ textarea.review-form-message {
   .mobile-menu {
     display: none;
   }
-  .page-navigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+
+  .header-container {
+    height: 72px;
   }
   .menu {
     color: #2e2f42;
@@ -963,38 +934,40 @@ textarea.review-form-message {
   .header-contacts-link:focus {
     color: #404bbf;
   }
+
   /* ============== /HEADER STYLES ============== */
   /* ============== HERO STYLES ============== */
   .hero {
-    padding: 112px 0;
+    margin: 72px auto 0;
+    background-repeat: no-repeat;
+  }
+  .hero-container {
     height: 436px;
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url(../images/hero-table.jpg);
+    margin: auto;
+
+    gap: 36px;
+    padding: 112px 136px;
   }
   .hero-title {
     width: 496px;
-    height: 120px;
     font-size: 56px;
     line-height: 1.07;
-    margin-bottom: 36px;
     letter-spacing: 1.12px;
   }
+
   /* ============== /HERO STYLES ============== */
   /* ============== BENEFITS ============== */
   .benefits-list {
     flex-wrap: wrap;
     flex-direction: row;
-    column-gap: 24px;
+    gap: 24px;
+    row-gap: 72px;
   }
   .benefits-list-item {
     width: calc((100% - 24px) / 2);
   }
   .benefits-title {
     text-align: left;
-    margin: 0;
   }
   /* ============== /BENEFITS ============== */
   /* ============== TEAM ============== */
@@ -1008,18 +981,18 @@ textarea.review-form-message {
     width: calc((100% - 24px) / 2);
   }
   .portfolio-list {
-    row-gap: 72px;
+    row-gap: 48px;
     column-gap: 24px;
   }
   /* ============== /PORTFOLIO ============== */
   /* ============== FOOTER STYLES ============== */
   .footer-logo {
-    margin-bottom: 0;
-    margin-right: 50px;
+    margin: 0;
   }
   .footer-container {
-    width: 584px;
+    padding: 0 108px;
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     column-gap: 24px;
     row-gap: 72px;
@@ -1068,7 +1041,7 @@ textarea.review-form-message {
 @media screen and (min-resolution: 192dpi) and (min-width: 1158px),
   screen and (min-resolution: 2dppx) and (min-width: 1158px),
   screen and (min-device-pixel-ratio: 2) and (min-width: 1158px) {
-  .hero {
+  .hero-container {
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -1079,9 +1052,8 @@ textarea.review-form-message {
 /* ============== HEADER STYLES ============== */
 @media screen and (min-width: 1158px) {
   .container {
-    width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 1440px;
+    padding: 0 156px;
     margin: 0 auto;
   }
   .contacts-list {
@@ -1096,33 +1068,47 @@ textarea.review-form-message {
     line-height: 1.5;
   }
   .section {
-    padding-bottom: 100px;
-    padding-top: 100px;
+    padding: 120px 0;
+  }
+  .header-container {
+    height: 72px;
+  }
+  .page-navigation {
+    margin: 0;
   }
   /* ============== /HEADER STYLES ============== */
   /* ============== HERO STYLES ============== */
-  .hero {
+
+  .hero-container {
     max-width: 1440px;
-    padding: 188px 0;
+
     height: 600px;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
       ),
       url(../images/hero-desktop.jpg);
+    gap: 48px;
+    padding: 188px 136px;
   }
   .hero-title {
-    margin-bottom: 48px;
+    font-size: 56px;
+    line-height: 1.07;
+    letter-spacing: 1.12px;
+    width: 496px;
   }
+
   /* ============== /HERO STYLES ============== */
   /* ============== BENEFITS ============== */
+  .benefits-list {
+    gap: 24px;
+  }
   .benefits-list-item {
-    width: calc((100% - 72px) / 4);
+    width: 264px;
   }
   .benefits-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: grid;
+    place-items: center;
     width: 264px;
     height: 112px;
     border-radius: 4px;
@@ -1140,7 +1126,7 @@ textarea.review-form-message {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.01em;
     color: #434455;
   }
   /* ============== /BENEFITS ============== */
@@ -1157,6 +1143,10 @@ textarea.review-form-message {
   .footer-container {
     column-gap: 0;
   }
+  .page-footer {
+    padding: 100px 0px;
+  }
+
   .footer-logo {
     margin-right: 100px;
   }
